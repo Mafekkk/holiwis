@@ -22,7 +22,7 @@ and open the template in the editor.
             var visor = new Cesium.Viewer('cesiumContainer');
             var matrizColores = {};
 
-            agregarGeojson('map.geojson', true);
+            agregarGeojson('casaSoacha.geojson', true);
             agregarGeojson('http://localhost/Cesium/Apps/recorrido/sedeCentral.geojson', true);
             agregarCZMLAnimado("ruta.czml");
             agregarCZML("puntos.czml");
@@ -59,8 +59,6 @@ and open the template in the editor.
                 visor.dataSources.add(miDataSource);
                 
             }
-
-
 
             function agregarGeojson(archivo,zoom) {
 
@@ -127,11 +125,15 @@ and open the template in the editor.
                     }
                 }
                 //Cargar un geoJSON en un momento dado
-                if(Cesium.JulianDate.secondsDifference(visor.clock.currentTime,visor.clock.startTime)>13 && carga==false){
-                     agregarGeojson('corferias.geojson',false);
+                var resta = Cesium.JulianDate.secondsDifference(visor.clock.currentTime,visor.clock.startTime);
+                if(resta>2 && carga===false){
+                     agregarGeojson('casaSoacha.geojson',true);
+                     agregarGeojson('tecno.geojson', false);
+                     agregarGeojson('parqueTunal', false);
+                     agregarGeojson('parqueOlaya.geojson',false);
+                     agregarGeojson('tercerMilenio.geojson', false);
                      carga=true;
                 }
-                
             });
 
 
