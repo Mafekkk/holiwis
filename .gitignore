@@ -1,1 +1,23 @@
-/nbproject/private/
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#37ff00",
+        "marker-size": "medium",
+        "marker-symbol": "circle",
+        "Nombre": "S/E El circo",
+        "Nivel": "250kV",
+        "Dueño": "ENEL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0625,
+          4.58691
+        ]
+      }
+    }
+  ]
+}
